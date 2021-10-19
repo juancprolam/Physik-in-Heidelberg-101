@@ -1,0 +1,198 @@
+\documentclass[a4paper,12pt]{article}
+
+%%%%%%%%%%%%
+% Packages %
+%%%%%%%%%%%%
+
+\usepackage[ngerman]{babel}         % Necessary for german Zeug
+\usepackage[utf8]{inputenc}         %
+\usepackage{graphicx}               % Better stuff for graphics
+\usepackage{color}                  % Probably colors
+\usepackage{colortbl}               % Colored tables
+\usepackage{amsmath}                % Useful math
+\usepackage{amssymb}                % Useful math
+\usepackage{enumerate}              % Lists
+\usepackage{enumitem}               % More lists
+\usepackage{siunitx}                % Units
+\usepackage{hyperref}               % Hyperlinks and references
+\usepackage{pdfpages}               % Include pdfs, haven't used it
+\usepackage{pgfplots}               % no idea
+\usepackage{parskip}                % Formatting
+\usepackage{verbatim}               % Quoting and stuff
+\usepackage[normalem]{ulem}         % Underlining, why do I have most of these?
+\usepackage{url}                    % Formatting links
+\usepackage{mdframed}               % Boxes
+\usepackage{lmodern}                % Pagestyle I think
+\usepackage{physics}                % Physics amen
+\usepackage{titlesec}               % Sections and so
+\usepackage{bm}                     % Bold math
+\usepackage{fancyhdr}               % Required for modifying headers and footers
+\usepackage{multicol}               % Required for splitting text into multiple columns
+\usepackage{glossaries}             % Glossary
+\usepackage{lastpage}               % For page # of ##
+\usepackage{stackengine}            % I think this is for stacking stuff
+\usepackage{caption}                % captions inside minipages
+\usepackage{newfloat}               % new types of caption environments
+\usepackage{makecell}               % different sized table cells
+\usepackage{float}                  % beating floats into submissiong
+
+%%%%%%%%%%%%%%%%
+% New commands %
+%%%%%%%%%%%%%%%%
+
+\newcommand{\ind}[0]{\ \ \ \ \ }                                        % Large space
+\newcommand{\indd}[0]{\ind \ind}                                        % Doubly large space
+\newcommand{\bbew}[0]{\Vert}                                            % Two vertical bars
+\newcommand{\diff}{\mathrm{\, d}}                                       % nice d but with space
+\newcommand{\EQ}[0]{\mathrel{\stackon[1pt]{$=$}{$\scriptstyle!$}}}      % Must equal =!
+\newcommand{\evalint}[3]{\bqty{#1}_{#2}^{#3}}                           % Evaluate integral within borders #2, #3    
+\newcommand{\Lagr}[0]{\mathcal{L}}                                      % Lagrange
+\newcommand{\dlagr}[0]{\mathscr{L}}                                     % Lagrangian            
+\newcommand{\Ham}[0]{\mathcal{H}}                                       % Hamilton    
+\newcommand{\Kam}[0]{\mathcal{K}}                                       % Kamilton
+\newcommand{\e}[1]{\text{e}^{#1}}                                       % e
+\renewcommand{\vec}[0]{\vb}                                             % Bold vectors
+\newcommand{\limit}[2]{\lim\limits_{#1 \to #2}}                         % Limit
+\newcommand{\summ}[2]{\sum\limits_{#1}^{#2}}                            % Sum
+\newcommand{\ELG}[1]{\dv{}{t} \pdv{\Lagr}{\dot{#1}} - \pdv{\Lagr}{#1}}  % Euler-Lagrange
+\newcommand{\ELGgen}[1]{\ds\dv{t} \ds\pdv{\dot{#1}} - \ds\pdv{#1}}      % Euler-Lagrange non specific
+\renewcommand{\div}{div\,}                                              % Divergence
+\newcommand{\rot}[0]{rot\,}                                             % Rotation
+\def\tbs{\textbackslash}                                                % Backslash in text    
+\newcommand{\ds}{\displaystyle}                                         % Display style
+\newcommand{\st}[2]{{#1}_{\text{#2}}}                                   % math with subtext
+\newcommand{\kreuz}[2]{\vec{#1} \times \vec{#2}}                        % kreuzprodukt
+\definecolor{lblue}{RGB}{51,153,255}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Elements and units %
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%
+% Page style %
+%%%%%%%%%%%%%%
+
+\parindent=0pt
+\allowdisplaybreaks
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\Name}                               
+\rhead{\arabic{Versuch}}
+\renewcommand{\headrulewidth}{1pt}
+\cfoot{\thepage\ von \pageref{LastPage}}
+\setlength{\headheight}{5pt}
+
+\titleformat*{\section}{\Large\bfseries}    % Section format
+\DeclareFloatingEnvironment[fileext=lop]{diagramm}  % Diagramm statt Abbildung
+
+%%%%%%%%%
+% Stuff %
+%%%%%%%%%
+
+\newcounter{Versuch}
+\newcommand{\Datum}{\textbf{1. Januar 2001}}        % Schreibe hier das Abgabedatum
+\newcommand{\Name}{Name}                            % Schreibe hier deinen Namen
+\newcommand{\Versuch}{Versuch}                      % Schreibe hier den Namen des Versuchs
+\newcommand{\Betreuer}{Betreuer}                    % Schreibe hier den Namen des Betreuers
+
+%%%%%%%%%%%%
+% Glossary %
+%%%%%%%%%%%%
+
+\makeglossaries
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+
+    \setcounter{Versuch}{1}             % Schreibe hier die Nummer des Versuchs
+
+% Title section    
+    
+\hrule width\hsize
+\vskip 0.1cm    
+\hrule width\hsize
+\vskip 0.3cm
+\noindent
+\textbf{Versuch \arabic{Versuch}} \hfill  \Datum
+\begin{center}
+{\textbf{\Versuch}} \\[1ex]
+{\small{Physikalisches Anfängerpraktikum I}}
+\end{center}
+\Name \hfill Betreuer: \Betreuer
+\vspace{2mm}\hrule
+\vskip 0.1cm
+\hrule width\hsize
+\vspace{3mm}
+\vspace{3mm}
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+
+
+% Meat section
+
+\section{Ziel des Versuches}
+    
+\section{Grundlagen}
+
+    \subsection{Physikalisches Ding 1}
+
+    \subsection{Physikalisches Ding 2}
+
+\section{Versuchsaufbau}    
+
+    \subsection{Materialen und Geräte}
+
+    \begin{itemize}
+        \item Mehl
+        
+        \item Mandelmehl
+        
+        \item Salz
+        
+        \item Backpulver
+        
+        \item Butter
+        
+        \item Brauner Zucker
+        
+        \item Ei
+        
+        \item Marmelade
+    \end{itemize}
+    
+    \subsection{Aufbau}
+    
+\newpage    
+    
+\section{Messung und Auswertung}
+
+    \subsection{Messprotokoll}
+    
+    \subsection{Auswertung}
+    
+\section{Zusammenfassung und Diskussion}
+
+\section{Quellen}
+
+
+%%%%%%%%%%%
+
+\newglossaryentry{Ding}
+{
+    name=Ding,
+    description={Etwas, was wie ein Objekt oder wie eine Sache ist}
+}
+
+\printglossaries
+
+\end{document}
